@@ -1,4 +1,4 @@
-# fume
+# Fume
 
 ## Project setup
 ```
