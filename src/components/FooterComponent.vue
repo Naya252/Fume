@@ -1,13 +1,14 @@
 <template>
   <v-footer dark padless>
     <v-card
+      color="#272727"
       class="flex flex-column-reverse flex-sm-row align-center"
       style="display: flex; margin: 0 auto"
       flat
       tile
       max-width="1920px"
     >
-      <div style="display: inline-flex" class="mx-4 my-4">
+      <div style="display: inline-flex; color: #adadad" class="mx-4 my-4">
         &copy;{{ new Date().getFullYear() }} Fume
       </div>
 

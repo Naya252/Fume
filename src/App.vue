@@ -37,10 +37,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  .v-app-bar--is-scrolled {
-    opacity: 0.85 !important;
-    backdrop-filter: blur(6px);
-  }
+  // .v-app-bar--is-scrolled {
+  //   opacity: 0.85 !important;
+  //   backdrop-filter: blur(6px);
+  // }
 }
 
 html {
@@ -71,6 +71,12 @@ body {
 .v-application a {
   text-decoration: none !important;
 }
+
+.v-toolbar__content {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-right: 0 !important;
+}
 </style>
 
 <script>
@@ -93,7 +99,7 @@ export default {
         to: "2",
       },
       {
-        title: "3",
+        title: "Team",
         to: "3",
       },
     ],
