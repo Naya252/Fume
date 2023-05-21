@@ -10,11 +10,11 @@
     <v-img
       :src="item.img"
       height="225px"
-      gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
+      gradient="to top left, rgba(181,65,240,.2), rgba(25,32,72,.7)"
     >
       <v-card-text class="text-h6 white--text">
         <v-row class="fill-height flex-column" justify="space-between">
-          <p class="mt-4 subheading text-left">
+          <p class="ma-4 subheading text-left">
             {{ item.text }}
           </p>
         </v-row>

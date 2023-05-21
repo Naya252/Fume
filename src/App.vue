@@ -38,7 +38,8 @@
   -moz-osx-font-smoothing: grayscale;
 
   .v-app-bar--is-scrolled {
-    opacity: 0.8 !important;
+    opacity: 0.85 !important;
+    backdrop-filter: blur(6px);
   }
 }
 

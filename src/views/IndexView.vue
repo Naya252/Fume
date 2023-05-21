@@ -37,11 +37,36 @@
                 <div class="introT__container mx-auto">
                   <h1
                     class="intro__title mb-0 noBreak"
-                    style="line-height: 120%"
+                    style="
+                      line-height: 120%;
+                      text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.55);
+                    "
+                    :style="
+                      $vuetify.breakpoint.mdAndUp
+                        ? 'font-size: 10rem'
+                        : $vuetify.breakpoint.smOnly
+                        ? 'font-size: 8rem'
+                        : 'font-size: 5rem'
+                    "
                   >
                     <span style="color: #e54617">F</span>ume
                   </h1>
-                  <p class="intro__text noBreak mb-0 mt-0">Наш слоган</p>
+                  <p
+                    class="intro__text noBreak mb-0 mt-6"
+                    style="
+                      line-height: 120%;
+                      text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.35);
+                    "
+                    :style="
+                      $vuetify.breakpoint.mdAndUp
+                        ? 'font-size: 1.5rem'
+                        : $vuetify.breakpoint.smOnly
+                        ? 'font-size: 1.3rem'
+                        : 'font-size: 1rem'
+                    "
+                  >
+                    Elevate Every Moment with Custom Fragrances!
+                  </p>
                 </div>
               </v-col>
             </v-row>
@@ -56,9 +81,29 @@
       id="section1"
       class="section d-flex"
     >
-      <div class="section_content">
+      <div
+        class="section_content"
+        :class="
+          $vuetify.breakpoint.mdAndUp
+            ? 'px-6'
+            : $vuetify.breakpoint.smOnly
+            ? 'px-4'
+            : 'px-2'
+        "
+      >
         <div class="mx-2">
-          <h2 class="py-8">Aroma in business is a powerful tool</h2>
+          <h2
+            class="py-8"
+            :style="
+              $vuetify.breakpoint.mdAndUp
+                ? 'font-size: 2rem'
+                : $vuetify.breakpoint.smOnly
+                ? 'font-size: 1.6rem'
+                : 'font-size: 1.4rem'
+            "
+          >
+            Elevate your business with fragrant odors!
+          </h2>
           <v-row class="ma-0">
             <v-col
               v-for="card in marketingCards"
@@ -68,7 +113,7 @@
               <CommonCard :item="card" />
             </v-col>
 
-            <ul>
+            <ul class="mb-14 pr-3 pl-12">
               <li
                 v-intersect.once="onIntersect"
                 v-for="li in marketingList"
@@ -92,9 +137,30 @@
       style="background: #272c36"
       class="section d-flex"
     >
-      <div class="section_content">
+      <div
+        class="section_content"
+        :class="
+          $vuetify.breakpoint.mdAndUp
+            ? 'px-6'
+            : $vuetify.breakpoint.smOnly
+            ? 'px-4'
+            : 'px-2'
+        "
+      >
         <div class="mx-2">
-          <h2 class="py-8" style="color: #fff">Почему Мы</h2>
+          <h2
+            class="py-8"
+            style="color: #fff"
+            :style="
+              $vuetify.breakpoint.mdAndUp
+                ? 'font-size: 2rem'
+                : $vuetify.breakpoint.smOnly
+                ? 'font-size: 1.6rem'
+                : 'font-size: 1.4rem'
+            "
+          >
+            Почему Мы
+          </h2>
         </div>
 
         <v-timeline
@@ -132,9 +198,29 @@
       style="background: #f6e0d3"
       class="section d-flex"
     >
-      <div class="section_content">
+      <div
+        class="section_content"
+        :class="
+          $vuetify.breakpoint.mdAndUp
+            ? 'px-6'
+            : $vuetify.breakpoint.smOnly
+            ? 'px-4'
+            : 'px-2'
+        "
+      >
         <div class="mx-2">
-          <h2 class="py-8">3</h2>
+          <h2
+            class="py-8"
+            :style="
+              $vuetify.breakpoint.mdAndUp
+                ? 'font-size: 2rem'
+                : $vuetify.breakpoint.smOnly
+                ? 'font-size: 1.6rem'
+                : 'font-size: 1.4rem'
+            "
+          >
+            3
+          </h2>
         </div>
       </div>
     </div>
@@ -163,34 +249,29 @@ export default {
     marketingCards: [
       {
         id: 0,
-        text: "Maintaining and strengthening the brand",
-        img: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
+        text: "Increase awareness of your brand",
+        img: "https://img.freepik.com/premium-photo/abstract-blue-outer-space-science-background-vibrant-colors-galaxy-sky-ocean-sea-mystical-liquid-chemicals-smoke-chemistry-and-biology-creative-backdrop-paper_154092-14077.jpg?w=826",
       },
       {
         id: 1,
-        text: "Improving the image of the organization",
-        img: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
+        text: "Reduce stress and anxiety in your workplace",
+        img: "https://img.freepik.com/free-photo/closeup-shot-of-a-beautiful-small-river-running-through-rocks-and-debris-in-a-forest_181624-3744.jpg?w=360&t=st=1684650315~exp=1684650915~hmac=0e9a8ff8b11085a4f3e7782483ad0cad5fc8b099b8334fd227f3f8ef431f25f0",
       },
       {
         id: 2,
-        text: "Generates a sense of satisfaction",
-        img: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
+        text: "Escalate your sales",
+        img: "https://img.freepik.com/premium-photo/boiling-water-splash-with-steam-on-black-background_213438-1170.jpg?w=740",
       },
       {
         id: 3,
-        text: "Encourages positive interaction",
-        img: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
+        text: "Enhance customer service",
+        img: "https://img.freepik.com/free-photo/abstract-heavy-blue-haze-in-dark-liquid_23-2148102012.jpg",
       },
-      // {
-      //   id: 4,
-      //   text: "Builds trust",
-      //   img: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
-      // },
     ],
     marketingList: [
-      "Запахи не анализируются логически. Они напрямую воздействуют на ту часть мозга, которая отвечает за эмоции, желания и настроение.",
-      "Человек может запомнить более 10 000 запахов. И они хранятся в памяти в 40 раз дольше звуковых или визуальных образов — почти всю жизнь.",
-      "Аромат очень точно передает оттенки образов и чувств. С его помощью вы можете привлечь внимание аудитории или напомнить о себе клиентам.",
+      "Scents affect on a subconscious level. They directly influence the part of brain which is responsible for emotions, desires and mood",
+      "A person can remember more than 10 000 odors. And they are stored in a memory for 40 times more than sounds and visual images",
+      "Fragrances express various feelings. With the help of aromas, you can remind about  your business and attract clients",
     ],
     timelineList: [
       {
@@ -379,9 +460,6 @@ ul {
 }
 
 li::marker {
-  font-size: 2rem;
-}
-h2 {
   font-size: 2rem;
 }
 </style>
