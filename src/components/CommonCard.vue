@@ -14,7 +14,7 @@
     >
       <v-card-text class="text-h6 white--text">
         <v-row class="fill-height flex-column" justify="space-between">
-          <p class="ma-4 subheading text-left">
+          <p class="ma-4 mt-10 subheading">
             {{ item.text }}
           </p>
         </v-row>

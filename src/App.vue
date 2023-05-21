@@ -89,7 +89,7 @@ export default {
         to: "1",
       },
       {
-        title: "Why Fume?",
+        title: "Why Fume",
         to: "2",
       },
       {

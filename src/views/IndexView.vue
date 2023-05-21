@@ -159,31 +159,45 @@
                 : 'font-size: 1.4rem'
             "
           >
-            Почему Мы
+            Why us
           </h2>
         </div>
 
         <v-timeline
           class="mt-3 mx-6 my-8"
           :dense="$vuetify.breakpoint.smAndDown"
+          v-intersect.once="onIntersectTimeLineDot"
         >
           <v-timeline-item
             v-for="item in timelineList"
             :key="item.id"
+            :itemId="item.id"
             color="#e54617"
             large
           >
             <template v-slot:opposite>
               <span style="color: #fff">{{ item.info }}</span>
             </template>
-            <v-card class="elevation-2">
+            <v-card
+              :itemId="item.id"
+              v-intersect.once="onIntersectTimeLine"
+              class="elevation-2"
+              style="background: #4f5980; border-radius: 16px"
+            >
               <v-card-title
                 class="text-h5"
-                style="background: #4f5980; color: #fff"
+                style="
+                  background: #4f5980;
+                  color: #fff;
+                  border-radius: 16px 16px 0 0;
+                "
               >
                 {{ item.title }}
               </v-card-title>
-              <v-card-text>
+              <v-card-text
+                style="background: #fff; min-height: 76px"
+                class="pt-4"
+              >
                 {{ item.text }}
               </v-card-text>
             </v-card>
@@ -276,24 +290,23 @@ export default {
     timelineList: [
       {
         id: 1,
-        title: "We are pioneers",
-        text: "В Узбекистане нет ни одной компании, которая может предложить подобные услуги. Вы не сможете найти столь же интересные и эксклюзивные предложения у кого-то другого.",
+        title: "We are among pioneers",
+        text: "Business is expanding in Uzbekistan, but aroma businesses remain a few",
       },
       {
         id: 2,
-        title: "Аромабрендинг",
-        text: "Мы подберем аромат, который станет визитной карточкой вашего Бизнеса",
+        title: "Aroma branding",
+        text: "We will select the fragrance, which will become a hallmark of your brand!",
       },
       {
         id: 3,
-        title: "Аромамаркетинг",
-        text: "Использование приятных и знакомых ароматов в бизнесе с целью благоприятного воздействия на человека",
+        title: "Aroma marketing",
+        text: "Using pleasant and familiar odors with the intention of positive interaction with clients",
       },
       {
         id: 4,
-        title: "Lorem ipsum",
-        text: "Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.",
-        info: "Tus eu perfecto",
+        title: "Aroma products",
+        text: "We create premium aroma products for presenting them to you clients or partners",
       },
     ],
   }),
@@ -317,6 +330,48 @@ export default {
         element.classList.remove(
           "animate__animated",
           "animate__backInUp",
+          "animate__slow"
+        );
+      });
+    },
+    onIntersectTimeLine(entries) {
+      const element = entries[0].target;
+
+      let side = element.getAttribute("itemId");
+
+      if (+side % 2 == 0) {
+        element.classList.add("animate__backInLeft");
+
+        element.addEventListener("animationend", () => {
+          element.classList.remove("animate__backInLeft");
+        });
+      } else {
+        element.classList.add("animate__backInRight");
+
+        element.addEventListener("animationend", () => {
+          element.classList.remove("animate__backInRight");
+        });
+      }
+
+      element.classList.add("animate__animated", "animate__slow");
+
+      element.addEventListener("animationend", () => {
+        element.classList.remove("animate__animated", "animate__slow");
+      });
+    },
+    onIntersectTimeLineDot(entries) {
+      const element = entries[0].target;
+
+      element.classList.add(
+        "animate__animated",
+        "animate__zoomIn",
+        "animate__slow"
+      );
+
+      element.addEventListener("animationend", () => {
+        element.classList.remove(
+          "animate__animated",
+          "animate__zoomIn",
           "animate__slow"
         );
       });
@@ -461,5 +516,43 @@ ul {
 
 li::marker {
   font-size: 2rem;
+}
+
+.v-application--is-ltr
+  .v-timeline:not(.v-timeline--dense):not(.v-timeline--reverse)
+  .v-timeline-item:nth-child(odd):not(.v-timeline-item--before)
+  .v-timeline-item__body
+  > .v-card:not(.v-card--link)::before,
+.v-application--is-ltr
+  .v-timeline:not(.v-timeline--dense):not(.v-timeline--reverse)
+  .v-timeline-item:nth-child(odd):not(.v-timeline-item--before)
+  .v-timeline-item__body
+  > .v-card::after,
+.v-application--is-ltr
+  .v-timeline:not(.v-timeline--dense):not(.v-timeline--reverse)
+  .v-timeline-item--after
+  .v-timeline-item__body
+  > .v-card:not(.v-card--link)::before,
+.v-application--is-ltr
+  .v-timeline:not(.v-timeline--dense):not(.v-timeline--reverse)
+  .v-timeline-item--after
+  .v-timeline-item__body
+  > .v-card::after,
+.v-application--is-ltr
+  .v-timeline:not(.v-timeline--dense):not(.v-timeline--reverse)
+  .v-timeline-item:nth-child(even):not(.v-timeline-item--after)
+  .v-timeline-item__body
+  > .v-card:not(.v-card--link)::before,
+.v-application--is-ltr
+  .v-timeline:not(.v-timeline--dense):not(.v-timeline--reverse)
+  .v-timeline-item:nth-child(even):not(.v-timeline-item--after)
+  .v-timeline-item__body
+  > .v-card::after,
+.v-application--is-ltr
+  .v-timeline--dense
+  .v-timeline-item
+  .v-timeline-item__body
+  > .v-card::after {
+  display: none !important;
 }
 </style>
