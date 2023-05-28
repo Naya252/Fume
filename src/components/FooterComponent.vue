@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import LogoTechstars from "./LogoTechstars";
+import LogoTechstars from "./logo/LogoTechstars";
 export default {
   name: "FooterComponent",
   components: {

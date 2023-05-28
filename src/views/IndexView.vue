@@ -109,9 +109,9 @@
 </template>
 
 <script>
-import SectionOne from "../components/SectionOne.vue";
-import SectionTwo from "../components/SectionTwo.vue";
-import SectionThree from "../components/SectionThree.vue";
+import SectionOne from "../components/sections/SectionOne.vue";
+import SectionTwo from "../components/sections/SectionTwo.vue";
+import SectionThree from "../components/sections/SectionThree.vue";
 import FooterComponent from "../components/FooterComponent";
 export default {
   name: "IndexView",

@@ -33,7 +33,7 @@
           style="overflow: hidden"
         >
           <v-img
-            src="../assets/team/1.jpg"
+            src="../../assets/team/1.jpg"
             height="300px"
             style="overflow: hidden"
           ></v-img>
@@ -59,7 +59,7 @@
           style="overflow: hidden"
         >
           <v-img
-            src="../assets/team/6.jpg"
+            src="../../assets/team/6.jpg"
             height="200px"
             style="overflow: hidden"
           ></v-img>
@@ -85,7 +85,7 @@
           style="overflow: hidden"
         >
           <v-img
-            src="../assets/team/9.jpg"
+            src="../../assets/team/9.jpg"
             height="300px"
             style="overflow: hidden"
           ></v-img>
@@ -111,7 +111,7 @@
           style="overflow: hidden"
         >
           <v-img
-            src="../assets/team/11.jpg"
+            src="../../assets/team/11.jpg"
             min-height="300px"
             style="overflow: hidden"
           ></v-img>

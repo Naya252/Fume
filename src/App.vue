@@ -80,7 +80,7 @@ body {
 </style>
 
 <script>
-import MainLogo from "@/components/MainLogo.vue";
+import MainLogo from "@/components/logo/MainLogo.vue";
 
 export default {
   name: "App",

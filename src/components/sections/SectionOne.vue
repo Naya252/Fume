@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import CommonCard from "./CommonCard";
+import CommonCard from "../CommonCard";
 export default {
   name: "SectionOne",
   components: {

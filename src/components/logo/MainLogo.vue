@@ -9,7 +9,7 @@
       })
     "
   >
-    <img class="mr-2" src="../assets/logo.svg" />
+    <img class="mr-2" src="../../assets/logo.svg" />
 
     <div style="color: #fff; font-size: 2rem">
       <span style="color: #e54617; font-weight: bold">F</span>ume
