@@ -43,22 +43,22 @@ export default {
       {
         id: 0,
         text: "Increase awareness of your brand",
-        img: "https://img.freepik.com/premium-photo/abstract-blue-outer-space-science-background-vibrant-colors-galaxy-sky-ocean-sea-mystical-liquid-chemicals-smoke-chemistry-and-biology-creative-backdrop-paper_154092-14077.jpg?w=826",
+        img: require("../../assets/img/card1.jpg"),
       },
       {
         id: 1,
         text: "Reduce stress and anxiety in your workplace",
-        img: "https://img.freepik.com/free-photo/closeup-shot-of-a-beautiful-small-river-running-through-rocks-and-debris-in-a-forest_181624-3744.jpg?w=360&t=st=1684650315~exp=1684650915~hmac=0e9a8ff8b11085a4f3e7782483ad0cad5fc8b099b8334fd227f3f8ef431f25f0",
+        img: require("../../assets/img/card2.jpg"),
       },
       {
         id: 2,
         text: "Escalate your sales",
-        img: "https://img.freepik.com/premium-photo/boiling-water-splash-with-steam-on-black-background_213438-1170.jpg?w=740",
+        img: require("../../assets/img/card3.jpg"),
       },
       {
         id: 3,
         text: "Enhance customer service",
-        img: "https://img.freepik.com/free-photo/abstract-heavy-blue-haze-in-dark-liquid_23-2148102012.jpg",
+        img: require("../../assets/img/card4.jpg"),
       },
     ],
     marketingList: [
