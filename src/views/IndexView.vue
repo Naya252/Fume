@@ -86,9 +86,14 @@
     <div
       v-for="section in sections"
       :key="section.id"
-      :style="`min-height: ${windowSize.y}px; position: relative; background: ${section.bg}`"
+      :style="
+        section.id === 3
+          ? `min-height: calc(${windowSize.y}px - 120px); position: relative; background: ${section.bg}`
+          : `min-height: ${windowSize.y}px; position: relative; background: ${section.bg}`
+      "
       :id="`section${section.id}`"
       class="section d-flex"
+      style="overflow: hidden"
     >
       <div
         class="section_content"

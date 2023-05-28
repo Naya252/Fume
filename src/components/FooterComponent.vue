@@ -2,7 +2,7 @@
   <v-footer dark padless>
     <v-card
       color="#272727"
-      class="flex flex-column-reverse flex-sm-row align-center"
+      class="flex align-center"
       style="display: flex; margin: 0 auto"
       flat
       tile
