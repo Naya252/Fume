@@ -13,8 +13,8 @@
         <div class="videoPly" style="width: 100vw">
           <v-img
             v-if="$vuetify.breakpoint.xsOnly"
-            position="center left"
-            src="../assets/img/video.png"
+            position="bottom right"
+            src="../assets/img/mobile.png"
             :height="windowSize.y"
             gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
           ></v-img>
@@ -175,7 +175,6 @@ export default {
   overflow: hidden;
   position: relative;
   width: 100%;
-
   background-position: center;
   -o-object-fit: cover;
   object-fit: cover;
@@ -239,21 +238,14 @@ export default {
 }
 
 .intro__title {
-  font-size: 2em;
+  line-height: 100%;
 }
 .intro__text {
-  font-size: 1em;
   line-height: 90%;
 }
-
-@media screen and (min-width: 768px) {
-  .intro__title {
-    font-size: 6em;
-  }
-  .intro__text {
-    font-size: 1.5em;
-    line-height: 90%;
-  }
+.intro__title,
+.intro__text {
+  transition: all 0.4s ease-in-out;
 }
 
 .section {
