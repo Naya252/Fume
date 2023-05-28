@@ -10,7 +10,5 @@
 <script>
 export default {
   name: "LogoTechstars",
-  props: {},
-  data: () => ({}),
 };
 </script>

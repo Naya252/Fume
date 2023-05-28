@@ -34,7 +34,5 @@
 <script>
 export default {
   name: "MainLogo",
-  props: {},
-  data: () => ({}),
 };
 </script>

@@ -30,7 +30,5 @@ export default {
   components: {
     LogoTechstars,
   },
-  props: {},
-  data: () => ({}),
 };
 </script>
