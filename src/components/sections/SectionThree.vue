@@ -4,105 +4,27 @@
 
     <div id="team" style="position: relative">
       <div
+        v-for="img in images"
+        :key="img.id"
         style="
           position: absolute;
-          top: 0;
-          left: 300px;
           border-radius: 16px;
-          overflow: auto;
-          z-index: 1;
+          overflow: hidden;
+          width: 100%;
         "
+        :style="img.style"
       >
         <v-card
-          elevation="10"
-          class="mx-auto"
-          max-width="400"
-          id="queue1"
-          v-intersect.once="onIntersect1"
-          style="overflow: hidden"
+          :elevation="img.elevation"
+          class="mx-auto my-10"
+          :width="img.width"
+          :id="img.anchor"
+          v-intersect.once="img.func"
         >
           <v-img
-            src="../../assets/team/1.jpg"
-            height="300px"
-            style="overflow: hidden"
-          ></v-img>
-        </v-card>
-      </div>
-
-      <div
-        style="
-          position: absolute;
-          top: 280px;
-          left: 250px;
-          border-radius: 16px;
-          overflow: auto;
-          z-index: 3;
-        "
-      >
-        <v-card
-          elevation="10"
-          class="mx-auto"
-          max-width="300"
-          id="queue2"
-          v-intersect.once="onIntersect2"
-          style="overflow: hidden"
-        >
-          <v-img
-            src="../../assets/team/6.jpg"
-            height="200px"
-            style="overflow: hidden"
-          ></v-img>
-        </v-card>
-      </div>
-
-      <div
-        style="
-          position: absolute;
-          top: 50px;
-          left: 0;
-          border-radius: 16px;
-          overflow: auto;
-          z-index: 2;
-        "
-      >
-        <v-card
-          elevation="10"
-          class="mx-auto"
-          max-width="350"
-          id="queue3"
-          v-intersect.once="onIntersect3"
-          style="overflow: hidden"
-        >
-          <v-img
-            src="../../assets/team/9.jpg"
-            height="300px"
-            style="overflow: hidden"
-          ></v-img>
-        </v-card>
-      </div>
-
-      <div
-        style="
-          position: absolute;
-          top: 80px;
-          right: 0;
-          border-radius: 16px;
-          overflow: auto;
-          z-index: 5;
-        "
-      >
-        <v-card
-          elevation="10"
-          class="mx-auto"
-          max-width="600"
-          id="queue4"
-          v-intersect.once="onIntersect4"
-          style="overflow: hidden"
-        >
-          <v-img
-            src="../../assets/team/11.jpg"
-            min-height="300px"
-            style="overflow: hidden"
+            :src="img.src"
+            :height="img.imgHeight"
+            :position="img.position"
           ></v-img>
         </v-card>
       </div>
@@ -116,6 +38,58 @@ export default {
   name: "SectionThree",
   components: {
     CommonTitle,
+  },
+  data: () => ({}),
+  computed: {
+    images() {
+      let arr = [
+        {
+          id: 1,
+          style: "top: -70px; right: -50%; z-index: 2;",
+          width: "50%",
+          anchor: "queue2",
+          src: require("../../assets/team/1.jpg"),
+          imgHeight: "40%",
+          func: this.onIntersect2,
+          position: "top center",
+          elevation: 10,
+        },
+        {
+          id: 2,
+          style: "top: 280px; left: 250px; z-index: 5;",
+          width: "50%",
+          anchor: "queue3",
+          src: require("../../assets/team/6.jpg"),
+          imgHeight: "200px",
+          func: this.onIntersect3,
+          position: "center center",
+          elevation: 10,
+        },
+        {
+          id: 3,
+          style: "top: -30px; left: 80px; z-index: 4;",
+          width: "45%",
+          anchor: "queue4",
+          src: require("../../assets/team/9.jpg"),
+          imgHeight: "20%",
+          func: this.onIntersect4,
+          position: "center center",
+          elevation: 24,
+        },
+        {
+          id: 4,
+          style: "top: 80px; left: -150px; z-index: 1;",
+          width: "60%",
+          anchor: "queue1",
+          src: require("../../assets/team/11.jpg"),
+          imgHeight: "500px",
+          func: this.onIntersect1,
+          position: "bottom left",
+          elevation: 10,
+        },
+      ];
+      return arr;
+    },
   },
 
   methods: {
