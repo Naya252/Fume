@@ -1,18 +1,7 @@
 <template>
   <div class="mx-2">
-    <h2
-      class="py-8"
-      style="color: #fff"
-      :style="
-        $vuetify.breakpoint.mdAndUp
-          ? 'font-size: 2rem'
-          : $vuetify.breakpoint.smOnly
-          ? 'font-size: 1.6rem'
-          : 'font-size: 1.4rem'
-      "
-    >
-      Why us
-    </h2>
+    <CommonTitle light>Why us</CommonTitle>
+
     <v-timeline
       class="mt-3 mx-6 my-8"
       :dense="$vuetify.breakpoint.smAndDown"
@@ -54,9 +43,12 @@
 </template>
 
 <script>
+import CommonTitle from "../CommonTitle";
 export default {
   name: "SectionTwo",
-  props: {},
+  components: {
+    CommonTitle,
+  },
   data: () => ({
     timelineList: [
       {

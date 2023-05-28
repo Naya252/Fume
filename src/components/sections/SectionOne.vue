@@ -1,17 +1,7 @@
 <template>
   <div class="mx-2">
-    <h2
-      class="py-8"
-      :style="
-        $vuetify.breakpoint.mdAndUp
-          ? 'font-size: 2rem'
-          : $vuetify.breakpoint.smOnly
-          ? 'font-size: 1.6rem'
-          : 'font-size: 1.4rem'
-      "
-    >
-      Elevate your business with fragrant odors!
-    </h2>
+    <CommonTitle>Elevate your business with fragrant odors!</CommonTitle>
+
     <v-row class="ma-0">
       <v-col
         v-for="card in marketingCards"
@@ -40,12 +30,14 @@
 
 <script>
 import CommonCard from "../CommonCard";
+import CommonTitle from "../CommonTitle";
 export default {
   name: "SectionOne",
   components: {
     CommonCard,
+    CommonTitle,
   },
-  props: {},
+
   data: () => ({
     marketingCards: [
       {

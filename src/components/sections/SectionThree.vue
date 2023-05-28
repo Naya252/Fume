@@ -1,17 +1,6 @@
 <template>
   <div class="mx-2">
-    <h2
-      class="py-8"
-      :style="
-        $vuetify.breakpoint.mdAndUp
-          ? 'font-size: 2rem'
-          : $vuetify.breakpoint.smOnly
-          ? 'font-size: 1.6rem'
-          : 'font-size: 1.4rem'
-      "
-    >
-      Team
-    </h2>
+    <CommonTitle>Team</CommonTitle>
 
     <div id="team" style="position: relative">
       <div
@@ -122,10 +111,13 @@
 </template>
 
 <script>
+import CommonTitle from "../CommonTitle";
 export default {
   name: "SectionThree",
-  props: {},
-  data: () => ({}),
+  components: {
+    CommonTitle,
+  },
+
   methods: {
     onIntersect1(entries) {
       const element = entries[0].target;
@@ -198,5 +190,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped></style>
