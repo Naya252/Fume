@@ -84,9 +84,10 @@
     </div>
 
     <div
-      :style="`min-height: ${windowSize.y}px; position: relative`"
-      style="background: #f6e0d3"
-      id="section1"
+      v-for="section in sections"
+      :key="section.id"
+      :style="`min-height: ${windowSize.y}px; position: relative; background: ${section.bg}`"
+      :id="`section${section.id}`"
       class="section d-flex"
     >
       <div
@@ -99,47 +100,7 @@
             : 'px-2'
         "
       >
-        <SectionOne />
-      </div>
-    </div>
-
-    <div
-      :style="`min-height: ${windowSize.y}px; position: relative`"
-      id="section2"
-      style="background: #272c36"
-      class="section d-flex"
-    >
-      <div
-        class="section_content"
-        :class="
-          $vuetify.breakpoint.mdAndUp
-            ? 'px-6'
-            : $vuetify.breakpoint.smOnly
-            ? 'px-4'
-            : 'px-2'
-        "
-      >
-        <SectionTwo />
-      </div>
-    </div>
-
-    <div
-      :style="`min-height: calc(${windowSize.y}px - 112px); position: relative`"
-      id="section3"
-      style="background: #f6e0d3"
-      class="section d-flex"
-    >
-      <div
-        class="section_content"
-        :class="
-          $vuetify.breakpoint.mdAndUp
-            ? 'px-6'
-            : $vuetify.breakpoint.smOnly
-            ? 'px-4'
-            : 'px-2'
-        "
-      >
-        <SectionThree />
+        <component :is="section.component" />
       </div>
     </div>
 
@@ -168,6 +129,11 @@ export default {
       x: 0,
       y: 0,
     },
+    sections: [
+      { id: 1, component: "SectionOne", bg: "#f6e0d3" },
+      { id: 2, component: "SectionTwo", bg: "#272c36" },
+      { id: 3, component: "SectionThree", bg: "#f6e0d3" },
+    ],
   }),
   mounted() {
     this.onResize();
