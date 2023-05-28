@@ -19,9 +19,15 @@
           style="color: #e54617"
           class="pa-4"
         >
-          <span style="color: rgba(0, 0, 0, 0.87); font-size: 1.3rem">{{
-            li
-          }}</span>
+          <span
+            style="color: rgba(0, 0, 0, 0.87)"
+            :style="
+              $vuetify.breakpoint.smOnly
+                ? 'font-size: 0.9rem'
+                : 'font-size: 1.3rem'
+            "
+            >{{ li }}</span
+          >
         </li>
       </ul>
     </v-row>

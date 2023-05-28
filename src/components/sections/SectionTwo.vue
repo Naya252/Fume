@@ -3,7 +3,7 @@
     <CommonTitle light>Why us</CommonTitle>
 
     <v-timeline
-      class="mt-3 mx-6 my-8"
+      class="mt-3 mx-md-6 mr-3 mr-md-0 my-8"
       :dense="$vuetify.breakpoint.smAndDown"
       v-intersect.once="onIntersectTimeLineDot"
     >
@@ -12,11 +12,9 @@
         :key="item.id"
         :itemId="item.id"
         color="#e54617"
-        large
+        :large="$vuetify.breakpoint.lgAndUp"
+        :small="$vuetify.breakpoint.smAndDown"
       >
-        <template v-slot:opposite>
-          <span style="color: #fff">{{ item.info }}</span>
-        </template>
         <v-card
           :itemId="item.id"
           v-intersect.once="onIntersectTimeLine"
@@ -24,7 +22,11 @@
           style="background: #4f5980; border-radius: 16px"
         >
           <v-card-title
-            class="text-h5"
+            :style="
+              $vuetify.breakpoint.smAndDown
+                ? 'font-size: 1rem'
+                : 'font-size: 1.5rem'
+            "
             style="
               background: #4f5980;
               color: #fff;
@@ -79,7 +81,7 @@ export default {
 
       let side = element.getAttribute("itemId");
 
-      if (+side % 2 == 0) {
+      if (+side % 2 !== 0) {
         element.classList.add("animate__backInLeft");
 
         element.addEventListener("animationend", () => {
@@ -132,5 +134,19 @@ export default {
   .v-timeline-item__body
   > .v-card::after {
   display: none !important;
+}
+
+.v-timeline--dense::before {
+  left: calc(25px - 1px) !important;
+}
+</style>
+
+<style lang="scss">
+.v-timeline--dense .v-timeline-item__divider {
+  min-width: 50px !important;
+}
+
+.v-timeline--dense .v-timeline-item__body {
+  max-width: calc(100% - 50px) !important;
 }
 </style>
